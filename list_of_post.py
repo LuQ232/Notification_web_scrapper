@@ -50,12 +50,17 @@ class List_of_posts:
             print()
 
     def is_new_post(self):
-        for index, elem in enumerate(scrap.list_of_last_posts()):
-            if(self.title_list[index] != scrap.title_of_post(elem)):
+        if(self.title_list[0] != scrap.title_of_post(scrap.list_of_last_posts()[0])):
                 return True
         return False
 
-    def update(self):
+    def is_changes_in_list(self):
+        for index, elem in enumerate(scrap.list_of_last_posts()):
+            if (self.title_list[index] != scrap.title_of_post(elem) or self.describtion_list[index] != scrap.describtion_of_post(elem) or self.time_list[index] != scrap.time_of_post_exist(elem) or self.answears_number_list[index] != scrap.number_of_answears(elem) or self.views_number_list[index] != scrap.number_of_views(elem) or self.authors_list[index] != scrap.author_of_post(elem)):
+                return True
+        return False
+
+    def update_list(self):
         for index,elem in enumerate(scrap.list_of_last_posts()):
             self.title_list[index] = scrap.title_of_post(elem)
             self.describtion_list[index] = scrap.describtion_of_post(elem)

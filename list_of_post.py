@@ -49,6 +49,19 @@ class List_of_posts:
             print()
             print()
 
+    def return_author_data(self,index):
+        return scrap.author_of_post(scrap.list_of_last_posts()[index])
+    def return_title_data(self,index):
+        return scrap.title_of_post(scrap.list_of_last_posts()[index])
+    def return_describtion_data(self,index):
+        return scrap.describtion_of_post(scrap.list_of_last_posts()[index])
+    def return_time_data(self,index):
+        return scrap.time_of_post_exist(scrap.list_of_last_posts()[index])
+    def return_answears_data(self,index):
+        return scrap.number_of_answears(scrap.list_of_last_posts()[index])
+    def return_views_data(self,index):
+        return scrap.number_of_views(scrap.list_of_last_posts()[index])
+
     def is_new_post(self):
         if(self.title_list[0] != scrap.title_of_post(scrap.list_of_last_posts()[0])):
                 return True

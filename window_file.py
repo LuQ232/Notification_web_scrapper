@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import list_of_post as list
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -53,11 +53,6 @@ class Ui_MainWindow(object):
         self.update_button = QtWidgets.QPushButton(self.centralwidget)
         self.update_button.setGeometry(QtCore.QRect(410, 590, 151, 51))
         self.update_button.setObjectName("update_button")
-
-
-        self.update_button.clicked.connect(self.button_clicked)
-
-
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1035, 21))
@@ -82,22 +77,8 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "TextLabel"))
         self.label_5.setText(_translate("MainWindow", "TextLabel"))
         self.label_6.setText(_translate("MainWindow", "TextLabel"))
-        self.update_button.setText(_translate("MainWindow", "NEXT"))
+        self.update_button.setText(_translate("MainWindow", "UPDATE"))
         self.menuADD_FLE.setTitle(_translate("MainWindow", "ADD FLE"))
-
-    def update(self,i):
-        self.label_1.setText(main_list.return_author_data(i))
-        self.label_2.setText(main_list.return_time_data(i))
-        self.label_3.setText(main_list.return_title_data(i))
-        self.label_4.setText(main_list.return_describtion_data(i))
-        self.label_5.setText(main_list.return_views_data(i))
-        self.label_6.setText(main_list.return_answears_data(i))
-
-    def button_clicked(self):
-        global i
-        i = i+1
-        self.update(i)
-
 
 
 if __name__ == "__main__":
@@ -106,7 +87,5 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    main_list = list.List_of_posts()
-    i=0
     MainWindow.show()
     sys.exit(app.exec_())

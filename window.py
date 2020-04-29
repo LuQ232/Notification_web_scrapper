@@ -10,6 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import *
 
+from datetime import datetime
 import list_of_post as list
 import time
 
@@ -877,7 +878,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         self.threadpool = QThreadPool()
-        self.threadpool.setMaxThreadCount(10)
+        self.threadpool.setMaxThreadCount(25)
         print("Multithreading with maximum %d threads" % self.threadpool.maxThreadCount())
 
     def retranslateUi(self, MainWindow):
@@ -1012,71 +1013,199 @@ class Ui_MainWindow(object):
         self.title_9.setText(_translate("MainWindow", "Title_9"))
         self.notification_check_box.setText(_translate("MainWindow", "Powiadomienia włączone"))
 
-    def update(self):
+    def update_1(self):
         print("UPDATE STARTED")
-        # self.label_1.setText(main_list.return_author_data(0))
-        # self.label_2.setText(main_list.return_time_data(0))
-        # self.label_3.setText(main_list.return_title_data(0))
-        # # self.label_4.setText(main_list.return_describtion_data(0))
-        # self.label_5.setText(main_list.return_views_data(0))
-        # self.label_6.setText(main_list.return_answears_data(0))
-        #
-        # self.label_7.setText(main_list.return_author_data(1))
-        # self.label_8.setText(main_list.return_time_data(1))
-        # self.label_9.setText(main_list.return_title_data(1))
-        # # self.label_10.setText(main_list.return_describtion_data(1))
-        # self.label_11.setText(main_list.return_views_data(1))
-        # self.label_12.setText(main_list.return_answears_data(1))
-        #
-        # self.label_13.setText(main_list.return_author_data(2))
-        # self.label_14.setText(main_list.return_time_data(2))
-        # self.label_15.setText(main_list.return_title_data(2))
-        # # self.label_16.setText(main_list.return_describtion_data(2))
-        # self.label_17.setText(main_list.return_views_data(2))
-        # self.label_18.setText(main_list.return_answears_data(2))
-        #
-        # self.label_19.setText(main_list.return_author_data(3))
-        # self.label_20.setText(main_list.return_time_data(3))
-        # self.label_21.setText(main_list.return_title_data(3))
-        # # self.label_22.setText(main_list.return_describtion_data(3))
-        # self.label_23.setText(main_list.return_views_data(3))
-        # self.label_24.setText(main_list.return_answears_data(3))
-        #
-        # self.label_25.setText(main_list.return_author_data(4))
-        # self.label_26.setText(main_list.return_time_data(4))
-        # self.label_27.setText(main_list.return_title_data(4))
-        # # self.label_28.setText(main_list.return_describtion_data(4))
-        # self.label_29.setText(main_list.return_views_data(4))
-        # self.label_30.setText(main_list.return_answears_data(4))
-        #
-        # self.label_31.setText(main_list.return_author_data(5))
-        # self.label_32.setText(main_list.return_time_data(5))
-        # self.label_33.setText(main_list.return_title_data(5))
-        # # self.label_34.setText(main_list.return_describtion_data(5))
-        # self.label_35.setText(main_list.return_views_data(5))
-        # self.label_36.setText(main_list.return_answears_data(5))
-        #
-        # self.label_37.setText(main_list.return_author_data(6))
-        # self.label_38.setText(main_list.return_time_data(6))
-        # self.label_39.setText(main_list.return_title_data(6))
-        # # self.label_40.setText(main_list.return_describtion_data(6))
-        # self.label_41.setText(main_list.return_views_data(6))
-        # self.label_42.setText(main_list.return_answears_data(6))
-        #
-        # self.label_43.setText(main_list.return_author_data(7))
-        # self.label_44.setText(main_list.return_time_data(7))
-        # self.label_45.setText(main_list.return_title_data(7))
-        # # self.label_46.setText(main_list.return_describtion_data(7))
-        # self.label_47.setText(main_list.return_views_data(7))
-        # self.label_48.setText(main_list.return_answears_data(7))
-
+        self.title_1.setText(main_list.return_title_data(0))
+        self.author_1.setText(main_list.return_author_data(0))
+        self.hour_1.setText(main_list.return_time_data(0))
+        self.views_1.setText(main_list.return_views_data(0))
+        self.answers_1.setText(main_list.return_answears_data(0))
         print("UPDATE ENDED")
+
+    def update_2(self):
+        self.title_2.setText(main_list.return_title_data(1))
+        self.author_2.setText(main_list.return_author_data(1))
+        self.hour_2.setText(main_list.return_time_data(1))
+        self.views_2.setText(main_list.return_views_data(1))
+        self.answers_2.setText(main_list.return_answears_data(1))
+
+    def update_3(self):
+        self.title_3.setText(main_list.return_title_data(2))
+        self.author_3.setText(main_list.return_author_data(2))
+        self.hour_3.setText(main_list.return_time_data(2))
+        self.views_3.setText(main_list.return_views_data(2))
+        self.answers_3.setText(main_list.return_answears_data(2))
+
+    def update_4(self):
+        self.title_4.setText(main_list.return_title_data(3))
+        self.author_4.setText(main_list.return_author_data(3))
+        self.hour_4.setText(main_list.return_time_data(3))
+        self.views_4.setText(main_list.return_views_data(3))
+        self.answers_4.setText(main_list.return_answears_data(3))
+
+    def update_5(self):
+        self.title_5.setText(main_list.return_title_data(4))
+        self.author_5.setText(main_list.return_author_data(4))
+        self.hour_5.setText(main_list.return_time_data(4))
+        self.views_5.setText(main_list.return_views_data(4))
+        self.answers_5.setText(main_list.return_answears_data(4))
+
+    def update_6(self):
+        self.title_6.setText(main_list.return_title_data(5))
+        self.author_6.setText(main_list.return_author_data(5))
+        self.hour_6.setText(main_list.return_time_data(5))
+        self.views_6.setText(main_list.return_views_data(5))
+        self.answers_6.setText(main_list.return_answears_data(5))
+
+    def update_7(self):
+        self.title_7.setText(main_list.return_title_data(6))
+        self.author_7.setText(main_list.return_author_data(6))
+        self.hour_7.setText(main_list.return_time_data(6))
+        self.views_7.setText(main_list.return_views_data(6))
+        self.answers_7.setText(main_list.return_answears_data(6))
+
+    def update_8(self):
+        self.title_8.setText(main_list.return_title_data(7))
+        self.author_8.setText(main_list.return_author_data(7))
+        self.hour_8.setText(main_list.return_time_data(7))
+        self.views_8.setText(main_list.return_views_data(7))
+        self.answers_8.setText(main_list.return_answears_data(7))
+
+    def update_9(self):
+        self.title_9.setText(main_list.return_title_data(8))
+        self.author_9.setText(main_list.return_author_data(8))
+        self.hour_9.setText(main_list.return_time_data(8))
+        self.views_9.setText(main_list.return_views_data(8))
+        self.answers_9.setText(main_list.return_answears_data(8))
+
+    def update_10(self):
+        self.title_10.setText(main_list.return_title_data(9))
+        self.author_10.setText(main_list.return_author_data(9))
+        self.hour_10.setText(main_list.return_time_data(9))
+        self.views_10.setText(main_list.return_views_data(9))
+        self.answers_10.setText(main_list.return_answears_data(9))
+
+    def update_11(self):
+        self.title_11.setText(main_list.return_title_data(10))
+        self.author_11.setText(main_list.return_author_data(10))
+        self.hour_11.setText(main_list.return_time_data(10))
+        self.views_11.setText(main_list.return_views_data(10))
+        self.answers_11.setText(main_list.return_answears_data(10))
+
+    def update_12(self):
+        self.title_12.setText(main_list.return_title_data(11))
+        self.author_12.setText(main_list.return_author_data(11))
+        self.hour_12.setText(main_list.return_time_data(11))
+        self.views_12.setText(main_list.return_views_data(11))
+        self.answers_12.setText(main_list.return_answears_data(11))
+
+    def update_13(self):
+        self.title_13.setText(main_list.return_title_data(12))
+        self.author_13.setText(main_list.return_author_data(12))
+        self.hour_13.setText(main_list.return_time_data(12))
+        self.views_13.setText(main_list.return_views_data(12))
+        self.answers_13.setText(main_list.return_answears_data(12))
+
+    def update_14(self):
+        self.title_14.setText(main_list.return_title_data(13))
+        self.author_14.setText(main_list.return_author_data(13))
+        self.hour_14.setText(main_list.return_time_data(13))
+        self.views_14.setText(main_list.return_views_data(13))
+        self.answers_14.setText(main_list.return_answears_data(13))
+
+    def update_15(self):
+        self.title_15.setText(main_list.return_title_data(14))
+        self.author_15.setText(main_list.return_author_data(14))
+        self.hour_15.setText(main_list.return_time_data(14))
+        self.views_15.setText(main_list.return_views_data(14))
+        self.answers_15.setText(main_list.return_answears_data(14))
+
+    def update_16(self):
+        self.title_16.setText(main_list.return_title_data(15))
+        self.author_16.setText(main_list.return_author_data(15))
+        self.hour_16.setText(main_list.return_time_data(15))
+        self.views_16.setText(main_list.return_views_data(15))
+        self.answers_16.setText(main_list.return_answears_data(15))
+
+    def update_17(self):
+        self.title_17.setText(main_list.return_title_data(16))
+        self.author_17.setText(main_list.return_author_data(16))
+        self.hour_17.setText(main_list.return_time_data(16))
+        self.views_17.setText(main_list.return_views_data(16))
+        self.answers_17.setText(main_list.return_answears_data(16))
+
+    def update_18(self):
+        self.title_18.setText(main_list.return_title_data(17))
+        self.author_18.setText(main_list.return_author_data(17))
+        self.hour_18.setText(main_list.return_time_data(17))
+        self.views_18.setText(main_list.return_views_data(17))
+        self.answers_18.setText(main_list.return_answears_data(17))
+
+    def update_19(self):
+        self.title_19.setText(main_list.return_title_data(18))
+        self.author_19.setText(main_list.return_author_data(18))
+        self.hour_19.setText(main_list.return_time_data(18))
+        self.views_19.setText(main_list.return_views_data(18))
+        self.answers_19.setText(main_list.return_answears_data(18))
+
+    def update_20(self):
+        self.title_20.setText(main_list.return_title_data(19))
+        self.author_20.setText(main_list.return_author_data(19))
+        self.hour_20.setText(main_list.return_time_data(19))
+        self.views_20.setText(main_list.return_views_data(19))
+        self.answers_20.setText(main_list.return_answears_data(19))
+
+    def time_update_change(self):
+        now = datetime.now()
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        self.last_update.setText(dt_string)
 
     def timer(self):
         while True:
-            time.sleep(60)
-            worker = Worker(self.update)
-            self.threadpool.start(worker)
+            time.sleep(90)
+            worker_1 = Worker(self.update_1)
+            worker_2 = Worker(self.update_2)
+            worker_3 = Worker(self.update_3)
+            worker_4 = Worker(self.update_4)
+            worker_5 = Worker(self.update_5)
+            worker_6 = Worker(self.update_6)
+            worker_7 = Worker(self.update_7)
+            worker_8 = Worker(self.update_8)
+            worker_9 = Worker(self.update_9)
+            worker_10 = Worker(self.update_10)
+            worker_11 = Worker(self.update_11)
+            worker_12 = Worker(self.update_12)
+            worker_13 = Worker(self.update_13)
+            worker_14 = Worker(self.update_14)
+            worker_15 = Worker(self.update_15)
+            worker_16 = Worker(self.update_16)
+            worker_17 = Worker(self.update_17)
+            worker_18 = Worker(self.update_18)
+            worker_19 = Worker(self.update_19)
+            worker_20 = Worker(self.update_20)
+            worker_date_update = Worker(self.time_update_change)
+
+            self.threadpool.start(worker_1)
+            self.threadpool.start(worker_2)
+            self.threadpool.start(worker_3)
+            self.threadpool.start(worker_4)
+            self.threadpool.start(worker_5)
+            self.threadpool.start(worker_6)
+            self.threadpool.start(worker_7)
+            self.threadpool.start(worker_8)
+            self.threadpool.start(worker_9)
+            self.threadpool.start(worker_10)
+            self.threadpool.start(worker_11)
+            self.threadpool.start(worker_12)
+            self.threadpool.start(worker_13)
+            self.threadpool.start(worker_14)
+            self.threadpool.start(worker_15)
+            self.threadpool.start(worker_16)
+            self.threadpool.start(worker_17)
+            self.threadpool.start(worker_18)
+            self.threadpool.start(worker_19)
+            self.threadpool.start(worker_20)
+            self.threadpool.start(worker_date_update)
 
 
 
@@ -1095,6 +1224,9 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+
+    main_list = list.List_of_posts()
+    ui.new_thread_update()
 
 
     sys.exit(app.exec_())
